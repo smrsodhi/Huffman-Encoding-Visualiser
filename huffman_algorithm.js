@@ -26,7 +26,7 @@ function buildHuffmanTree(freqMap) {
     }
     while (queue.length > 1) {
         queue.sort(function (a, b) {
-            a.freq - b.freq
+            return a.freq - b.freq
         })
         const left = queue.shift()
         const right = queue.shift()
