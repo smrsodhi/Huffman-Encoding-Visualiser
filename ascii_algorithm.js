@@ -9,6 +9,7 @@ function stringToAsciiBinary(inputString) {
     for (let i = 0; i < inputString.length; i++) {
         const char = inputString[i];
         binaryString += charToAsciiBinary(char);
+        binaryString += ' '
     }
     return binaryString;
 }
