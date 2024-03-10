@@ -47,9 +47,9 @@ function addCodes(freqMap, codes) {
 
 generateBtn.addEventListener('click', function () {
     ascii.value = stringToAsciiBinary(text.value)
+    codesList.innerHTML = ''
     if (text.value === '') {
         huffman.value = ''
-        codesList.innerText = ''
     } else {
         const { freqMap, codes, encodedStr } = huffmanEncoding(text.value)
         huffman.value = encodedStr
@@ -62,5 +62,6 @@ clearBtn.addEventListener('click', function () {
     text.value = ''
     ascii.value = ''
     huffman.value = ''
+    codesList.innerHTML = ''
     updateStats()
 })
