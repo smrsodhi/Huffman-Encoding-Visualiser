@@ -33,10 +33,16 @@ function updateStats() {
 }
 
 function addCodes(freqMap, codes) {
-    const keys = Object.keys(freqMap)
-    for (let i = 0; i < keys.length; i++) {
-        codesList.innerHTML += `<div class="${i % 2 ? "text-primary" : ""}">[${keys[i]}](${freqMap[keys[i]]}) -- ${codes[keys[i]]}</div>`
-    }
+    const arr = Object.entries(freqMap).map(([char, freq]) => ({ char, freq }));
+    arr.sort(function (a, b) {
+        a.char.localeCompare(b.char)
+    })
+    arr.forEach(function ({ char, freq }) {
+        const div = document.createElement('div');
+        div.innerText = `[${char}](${freq}) -- ${codes[char]}`;
+        div.style.width = '20%';
+        codesList.append(div);
+    })
 }
 
 generateBtn.addEventListener('click', function () {

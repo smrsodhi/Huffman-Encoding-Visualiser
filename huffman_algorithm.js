@@ -25,7 +25,9 @@ function buildHuffmanTree(freqMap) {
         queue.push(new Node(char, freqMap[char]))
     }
     while (queue.length > 1) {
-        queue.sort((a, b) => a.freq - b.freq)
+        queue.sort(function (a, b) {
+            a.freq - b.freq
+        })
         const left = queue.shift()
         const right = queue.shift()
         const newNode = new Node(null, left.freq + right.freq)
@@ -61,5 +63,5 @@ function huffmanEncoding(str) {
     const root = buildHuffmanTree(freqMap)
     const codes = (keys.length === 1) ? { [keys[0]]: '0 ' } : buildHuffmanCodes(root)
     const encodedStr = encode(str, codes)
-    return { freqMap,  codes, encodedStr }
+    return { freqMap, codes, encodedStr }
 }

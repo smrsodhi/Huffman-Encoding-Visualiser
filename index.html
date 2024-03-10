@@ -12,16 +12,17 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
-<body style="font-family: Roboto Mono, monospace;">
+<body>
     <div class="container text-center">
         <h1 class="text-primary my-5">Huffman Encoding Visualiser</h1>
         <div class="row my-3">
             <div class="col">
                 <div class="form-floating">
                     <textarea class="form-control" placeholder="Leave a comment here" id="text"
-                        style="height: 300px"></textarea>
+                        style="height: 300px;"></textarea>
                     <label for="text">Write your text here...</label>
                 </div>
                 <div class="container">
@@ -35,14 +36,14 @@
             <div class="col">
                 <div class="form-floating">
                     <textarea class="form-control text-secondary" placeholder="Leave a comment here" id="ascii"
-                        style="height: 300px" disabled></textarea>
+                        style="height: 300px;" disabled></textarea>
                     <label for="ascii">ASCII Encoded Text</label>
                 </div>
             </div>
             <div class="col">
                 <div class="form-floating">
                     <textarea class="form-control text-secondary" placeholder="Leave a comment here" id="huffman"
-                        style="height: 300px" disabled></textarea>
+                        style="height: 300px;" disabled></textarea>
                     <label for="huffman">Huffman Encoded Text</label>
                 </div>
                 <div class="container">
@@ -58,7 +59,7 @@
     </div>
     <div class="container">
         <h2>Stats</h2>
-        <div class="row text-secondary my-3">
+        <div class="row text-primary my-3">
             <div class="col">
                 <p class="my-0">Number of characters: <span id="chars">N/A</span></p>
             </div>
@@ -69,11 +70,11 @@
             <div class="col">
                 <p class="my-0">Number of bits: <span id="huffman-bits">N/A</span></p>
                 <p class="my-0">Number of bytes: <span id="huffman-bytes">N/A</span></p>
-                <p class="my-0 text-dark">Compression: <span id="compression">N/A</span></p>
+                <p class="text-dark my-0">Compression: <span id="compression">N/A</span></p>
             </div>
         </div>
         <div class="row text-secondary my-5">
-            <div class="col d-flex flex-row flex-wrap justify-content-evenly" id="codes"></div>
+            <div class="col d-flex flex-row flex-wrap" id="codes"></div>
         </div>
     </div>
 
@@ -85,4 +86,3 @@
 </body>
 
 </html>
-
