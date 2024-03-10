@@ -35,7 +35,7 @@ function updateStats() {
 function addCodes(freqMap, codes) {
     const arr = Object.entries(freqMap).map(([char, freq]) => ({ char, freq }));
     arr.sort(function (a, b) {
-        a.char.localeCompare(b.char)
+        return a.char.localeCompare(b.char)
     })
     arr.forEach(function ({ char, freq }) {
         const div = document.createElement('div');
